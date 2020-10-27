@@ -163,4 +163,8 @@ h1 {
   .source {
     font-size: 1.25rem;
   }
+  .tags{
+    margin: 5px;
+    padding: 5px;
+  }
 }
