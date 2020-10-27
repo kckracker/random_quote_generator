@@ -13,4 +13,4 @@ As an added display of JavaScript knowledge and an additional aesthetical elemen
 
 The quotes will automatically refresh after 7 seconds of display to allow for reading time.
 
-Cheers and enjoy the quote!
+Cheers and enjoy the quotes!
