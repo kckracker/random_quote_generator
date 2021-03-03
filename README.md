@@ -1,4 +1,4 @@
-# Techdegree Project 1
+# Random Quote Generator
  random_quote_generator
 
 Greetings!
