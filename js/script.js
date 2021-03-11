@@ -1,3 +1,4 @@
+const quoteButton = document.querySelector('#load-quote')
 /* Creating array to store objects containing quote, source, citation, year, and tags, where available.
 */
 let quotes = [
@@ -60,10 +61,21 @@ function randomColor () {
     return color;
 }
 
+// Creating timer variable to store interval method globally. Resetting method syntax discovered at https://www.w3schools.com/jsref/met_win_cleartimeout.asp
+let timer;
+
+// Utilizing the setInterval() method for 5 seconds (5000 milliseconds) to automatically re-run the function.
+function quoteTimer(){
+   timer = setInterval(printQuote, 5000);
+}
+function resetTimer(){
+    clearInterval(timer);
+}
 /* Building function to call random quote based on quotes array.
 Adding variable inside function to store value of getRandomQuote() in order to ensure object properties align correctly.
 */
 function printQuote () {
+    resetTimer();
     let randomObject = getRandomQuote();
     let quote = `
     <p class="quote"> ${quotes[randomObject].quote}
@@ -94,8 +106,11 @@ function printQuote () {
     */
     document.getElementById('color-change').style.backgroundColor = `rgb(${randomColor()})`;
     document.getElementById('quote-box').innerHTML = quote;
-    // Utilizing the setTimeout() method for 5 seconds (5000 milliseconds) to automatically re-run the function.
-    setTimeout(printQuote, 7000);
+    quoteTimer();
 }
+
 //Included code for refreshing quote by clicking button
-document.getElementById('load-quote').addEventListener("click", printQuote, false);
+document.getElementById('load-quote').addEventListener("click", () => {
+    printQuote();
+    },
+     false);
